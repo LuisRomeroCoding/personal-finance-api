@@ -1,0 +1,19 @@
+# .NET Build outputs
+[Bb]in/
+[Oo]bj/
+[Ll]ogs/
+[Tt]emp/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code files
+.vscode/
+
+# OS specific files
+.DS_Store
+Thumbs.db
