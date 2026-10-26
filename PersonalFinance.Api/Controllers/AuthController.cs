@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PersonalFinance.Api.DTOs;
+using PersonalFinance.Api.Extensions;
 using PersonalFinance.Api.Models;
 using PersonalFinance.Api.Services;
 
@@ -62,5 +64,22 @@ public class AuthController : ControllerBase
     {
         Response.Cookies.Delete("accessToken");
         return Ok(new { message = "Logged out successfully" });
+    }
+
+    [HttpGet("me")]
+    [Authorize]
+    public IActionResult GetCurrentUser()
+    {
+        try
+        {
+            int userId = User.GetUserId();
+            string email = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value ?? string.Empty;
+
+            return Ok(new { userId, email });
+        }
+        catch (Exception ex)
+        {
+            return Unauthorized(new { message = ex.Message });
+        }
     }
 }
