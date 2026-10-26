@@ -1,10 +1,7 @@
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 using PersonalFinance.Api.DTOs;
 using PersonalFinance.Api.Models;
 using PersonalFinance.Api.Services;
-using static System.Net.WebRequestMethods;
 
 namespace PersonalFinance.Api.Controllers;
 
