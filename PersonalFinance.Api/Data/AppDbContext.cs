@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PersonalFinance.Api.Models;
 
-namespace PersonalFinance.Api.Models;
+namespace PersonalFinance.Api.Data;
 
 public class AppDbContext : DbContext
 {
