@@ -30,10 +30,7 @@ namespace PersonalFinance.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CategiryId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CategoryId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<int>("Month")
@@ -156,7 +153,9 @@ namespace PersonalFinance.Api.Migrations
                 {
                     b.HasOne("PersonalFinance.Api.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("PersonalFinance.Api.Models.User", "User")
                         .WithMany("Budgets")

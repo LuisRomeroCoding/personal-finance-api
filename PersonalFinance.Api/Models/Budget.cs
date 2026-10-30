@@ -9,13 +9,13 @@ public class Budget
 
     [Required]
     public int UserId { get; set; }
-    
-    public User? User { get; set; } = null;
-    
-    [Required]
-    public int CategiryId { get; set; }
 
-    public Category? Category { get; set; } = null;
+    public User User { get; set; } = null!;
+
+    [Required]
+    public int CategoryId { get; set; }
+
+    public Category Category { get; set; } = null!;
 
     [Required, Column(TypeName = "decimal(18,2)")]
     public decimal MonthlyLimit { get; set; }
