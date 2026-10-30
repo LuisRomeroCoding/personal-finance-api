@@ -21,7 +21,7 @@ public class Transaction
     public decimal Amount { get; set; }
 
     [Required]
-    DateTime Date { get; set; }
+    public DateTime Date { get; set; }
 
     [MaxLength(500)]
     public string Description { get; set; } = string.Empty;
