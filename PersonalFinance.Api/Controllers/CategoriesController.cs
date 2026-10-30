@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using PersonalFinance.Api.Data;
 using PersonalFinance.Api.DTOs;
 using PersonalFinance.Api.Extensions;
